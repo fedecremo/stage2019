@@ -1,0 +1,114 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['gantt']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function daysToMilliseconds(days) {
+			return days * 24 * 50 * 50 * 1000;
+		}
+
+		function drawChart() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Task ID');
+			data.addColumn('string', 'Task Name');
+			data.addColumn('string', 'Resource');
+			data.addColumn('date', 'Start Date');
+			data.addColumn('date', 'End Date');
+			data.addColumn('number', 'Duration');
+			data.addColumn('number', 'Percent Complete');
+			data.addColumn('string', 'Dependencies');
+
+			data.addRows([
+				['0', 'Find sources', 'blue',
+				new Date(2018, 5, 7), new Date(2018, 8, 24), null,  33,  null],
+				['1', 'Create Bibliography', 'red',
+				new Date(2018, 7, 7), new Date(2018, 8, 24), null, 25, null],
+				['2', 'Outline paper', 'red',
+				new Date(2018, 6, 7), new Date(2018, 7, 24), null, 0, null],
+				['4', 'Write paper', 'red',
+				new Date(2018, 5, 7), new Date(2018, 8, 24), null, 100, null],
+				['5', 'Hand in paper', 'yellow',
+				new Date(2018, 5, 7), new Date(2018, 8, 17), null, 50, null]
+			]);
+
+			var options = {
+				height: 250,
+				gantt: {
+					criticalPathEnabled: false,
+					innerGridTrack: {
+						fill: '#fff'		//colore delle righe dispari
+					},		
+					innerGridDarkTrack: {
+						fill: '#e5e5e5'		//colore delle righe pari
+					}
+				}
+			};
+
+			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+		
+			var IDs = ["task_id", "task_name", "resource", "start_date", "end_date", "duration", "percent_complete", "dependencies"];
+		
+			function selectHandler() {
+				var selectedItem = chart.getSelection()[0];
+				if (selectedItem) {
+					for(i=0; i<8; i++) {
+						var value = data.getValue(selectedItem.row, i);
+						document.getElementById(IDs[i]).innerHTML = value;
+					}
+				}
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler);
+			chart.draw(data, options);
+		}
+	</script>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 20px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="title_div">
+		<p>title</p>
+	</div>
+	<div id="chart_div">
+		
+	</div>
+	<table>
+		<tr>
+			<th>Task ID</td>
+			<th>Task Name</td>
+			<th>Resource</td>
+			<th>Start Date</td>
+			<th>End Date</td>
+			<th>Duration</td>
+			<th>Percent Complete</td>
+			<th>Dependencies</td>
+		</tr>
+		<tr>
+			<td id="task_id"></td>
+			<td id="task_name"></td>
+			<td id="resource"></td>
+			<td id="start_date"></td>
+			<td id="end_date"></td>
+			<td id="duration"></td>
+			<td id="percent_complete"></td>
+			<td id="dependencies"></td>
+		</tr>
+	</table>
+</body>
+</html>
