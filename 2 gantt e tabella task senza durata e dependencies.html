@@ -1,0 +1,103 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function daysToMilliseconds(days) {
+      return days * 24 * 50 * 50 * 1000;
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+	  data.addColumn('string', 'Resource');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      data.addRows([
+        ['Research', 'Leggi i libri di italiano', 'Italiano',
+         new Date(2018, 5, 7), new Date(2018, 8, 24), null,  33,  null],
+        ['Write', 'Studia i capitoli di storia', 'Storia',
+         new Date(2018, 7, 7), new Date(2018, 8, 24), null, 25, null],
+        ['Cite', 'Fai i compiti di mate', 'Matematica',
+         new Date(2018, 6, 7), new Date(2018, 7, 24), null, 0, null],
+        ['Complete', 'Leggi il libro di inglese', 'Inglese',
+         new Date(2018, 5, 7), new Date(2018, 8, 24), null, 100, null],
+        ['Outline', 'Scrivi un saggio breve', 'Italiano',
+         new Date(2018, 5, 7), new Date(2018, 8, 17), null, 50, null]
+      ]);
+
+        var options = {
+        height: 275,
+        gantt: {
+          criticalPathEnabled: false,
+          innerGridHorizLine: {
+            stroke: '#ffe0b2',		//stroke = contorno
+            strokeWidth: 2
+          },
+          innerGridTrack: {fill: '#4c6619'},		//colore delle righe dispari
+          innerGridDarkTrack: {fill: '#355033'}		//colore delle righe pari
+        }
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+		
+		var IDs = ["task_id", "task_name", "resource", "start_date", "end_date", "duration", "percent_complete", "dependencies"];
+		
+		function selectHandler() {
+				var selectedItem = chart.getSelection()[0];
+				if (selectedItem) {
+					for(i=0; i<8; i++) {
+						var value = data.getValue(selectedItem.row, i);
+						if(!value) {
+							document.getElementById(IDs[i]).innerHTML = "N/A";
+						}
+						document.getElementById(IDs[i]).innerHTML = value;
+					}
+				}
+		}
+		google.visualization.events.addListener(chart, 'select', selectHandler);
+      chart.draw(data, options);
+    }
+  </script>
+  <style>
+	td{
+		width: 150;
+		height: 50;
+		text-align: center;
+	}
+  </style>
+</head>
+<body>
+  <div id="chart_div"></div>
+  <table border=1>
+		<tr>
+			<td>Task ID</td>
+			<td>Task Name</td>
+			<td>Resource</td>
+			<td>Start Date</td>
+			<td>End Date</td>
+			<td>Duration</td>
+			<td>Percent Complete</td>
+			<td>Dependencies</td>
+		</tr>
+		<tr>
+			<td id="task_id"></td>
+			<td id="task_name"></td>
+			<td id="resource"></td>
+			<td id="start_date"></td>
+			<td id="end_date"></td>
+			<td id="duration"></td>
+			<td id="percent_complete"></td>
+			<td id="dependencies"></td>
+		</tr>
+  </table>
+</body>
+</html>
