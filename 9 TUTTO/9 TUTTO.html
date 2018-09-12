@@ -1,0 +1,236 @@
+<html>
+<head>
+	<meta charset=UTF-8 />
+	<title>TUTTO</title>
+	<link href="css/stile.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+
+		google.charts.load('current', {'packages':['gantt']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function daysToMilliseconds(days) {
+			return days * 24 * 50 * 50 * 1000;
+		}
+
+		function drawChart() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Task ID');
+			data.addColumn('string', 'Task Name');
+			data.addColumn('string', 'Resource');
+			data.addColumn('date', 'Start Date');
+			data.addColumn('date', 'End Date');
+			data.addColumn('number', 'Duration');
+			data.addColumn('number', 'Percent Complete');
+			data.addColumn('string', 'Dependencies');
+
+			data.addRows([
+				['0', 'Find sources', 'blue',
+				new Date(2018, 5, 7), new Date(2018, 8, 24), null,  33,  null],
+				['1', 'Create Bibliography', 'red',
+				new Date(2018, 7, 7), new Date(2018, 8, 24), null, 25, null],
+				['2', 'Outline paper', 'red',
+				new Date(2018, 6, 7), new Date(2018, 7, 24), null, 0, null],
+				['4', 'Write paper', 'red',
+				new Date(2018, 5, 7), new Date(2018, 8, 24), null, 100, null],
+				['5', 'Hand in paper', 'yellow',
+				new Date(2018, 5, 7), new Date(2018, 8, 17), null, 50, null]
+			]);
+
+			var options = {
+				height: 250,
+				gantt: {
+					criticalPathEnabled: false,
+					innerGridHorizLine: {
+						stroke: '#a0a0a0',		//stroke = contorno
+						strokeWidth: 1
+					},
+					innerGridTrack: {
+						fill: '#fff'		//colore delle righe dispari
+					},		
+					innerGridDarkTrack: {
+						fill: '#e5e5e5'		//colore delle righe pari
+					}
+				}
+			};
+
+			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+		
+			var IDs = ["task_id", "task_name", "resource", "start_date", "end_date", "duration", "percent_complete", "dependencies"];
+		
+			function selectHandler() {
+				var selectedItem = chart.getSelection()[0];
+				if (selectedItem) {
+					for(i=0; i<8; i++) {
+						var value = data.getValue(selectedItem.row, i);
+						if(IDs[i] == "task_id") {
+							document.getElementById(IDs[i]).innerHTML = value;
+						}
+						if(IDs[i] == "task_name") {
+							document.getElementById(IDs[i]).innerHTML = value;
+						}
+						if(IDs[i] == "resource") {
+							document.getElementById(IDs[i]).innerHTML = value;
+						}
+						if(IDs[i] == "start_date") {
+							var start = String(value).slice(0, 15);
+							document.getElementById(IDs[i]).innerHTML = start;
+						}
+						if(IDs[i] == "end_date") {
+							var end = String(value).slice(0, 15);
+							document.getElementById(IDs[i]).innerHTML = end;
+						}
+						if(IDs[i] == "duration") {
+							document.getElementById(IDs[i]).innerHTML = value;
+						}
+						if(IDs[i] == "percent_complete") {
+							document.getElementById(IDs[i]).innerHTML = value;
+						}
+						if(IDs[i] == "dependencies") {
+							document.getElementById(IDs[i]).innerHTML = value;
+						}
+					}
+				}
+			}
+			google.visualization.events.addListener(chart, 'select', selectHandler);
+			chart.draw(data, options);
+		}
+	</script>
+	<style>
+		body {
+			background-image: url('sfondo.jpg');
+		}
+	
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		#table_head {
+			font-weight: bold;
+			color: #909090;
+		}
+		
+		td {
+			border-bottom: 1px solid #dddddd;
+			border-top: 1px solid #dddddd;
+			text-align: left;
+			padding: 15px;
+		}
+		
+		.clearfix::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		
+		#chart_div {
+			margin-left: 225;
+			margin-right: 225;
+		}
+		
+		#table_div {
+			margin-left: 225;
+			margin-right: 225;
+		}
+		
+		#title_div {
+			margin-left: 225;
+			margin-right: 225;
+			border-style: outset;
+			border-width: 3px;
+			background-color: #e5e5e5;
+			font-size: 15px;
+			font-family: Tahoma;
+			padding: 10px;
+			align: center;
+		}
+		img {
+			margin-left: 300;
+			margin-top: 10;
+			width: 120;
+			height: 120;
+			float: left;
+			border-radius: 10px;
+		}
+		
+	</style>
+</head>
+<body style="background-image: url(sfondo.jpg)">
+	<div id="container">
+			<header>
+				<div class="menu">
+					<div class="closeButton"><a class="icon-close"></a>
+						
+					</div>
+					<ul>
+						<li id="hi"><a href="#">REPORTS</a></li>
+						<li><a href="#">Created by Me</a></li>
+						<li><a href="#">Private Reports</a></li>
+						<li><a href="#">Public Reports</a></li>
+						<li><a href="#">All Reports</a></li>
+						<li id="hi"><a href="#">FOLDERS</a></li>
+						<li><a href="#">Created by Me</a></li>
+						<li><a href="#">Shared with Me</a></li>
+						<li><a href="#">All Folders</a></li>
+					</ul>
+				</div>
+				<div id="menuButton"><a class="icon-menu"></a>
+			
+				</div>
+			</header>
+	
+		<script>
+			$('#menuButton').click(function()
+		{
+			$('.menu').
+			animate({"left":"0px"}, 1000);
+		});
+		
+			$('.closeButton').click(function()
+		{
+			$('.menu').animate({"left":"-200px"}, 1000);
+		});
+		</script>
+
+	<div class="clearfix" id="title_div">
+		<img src="diamond_logo.png" alt="LOGO"></img>
+		<h3 id="title_company">Company</h3>
+		<p id="title_user">User</p>
+		<p id="title_end_date">End Date</p>
+	</div>
+	<br><br>
+	<div id="chart_div">
+		<!-- grafico -->
+	</div>
+	<br><br>
+	<div id="table_div">
+		<table>
+			<tr>
+				<td id="table_head">TASK ID</td>
+				<td id="table_head">TASK NAME</td>
+				<td id="table_head">RESOURCE</td>
+				<td id="table_head">START DATE</td>
+				<td id="table_head">END DATE</td>
+				<td id="table_head">DURATION</td>
+				<td id="table_head">PERCENT COMPLETE</td>
+				<td id="table_head">DEPENDENCIES</td>				
+			</tr>
+			<tr>
+				<td id="task_id"></td>
+				<td style="color: blue" id="task_name"></td>
+				<td id="resource"></td>
+				<td id="start_date"></td>
+				<td id="end_date"></td>
+				<td id="duration"></td>
+				<td id="percent_complete"></td>
+				<td id="dependencies"></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>
