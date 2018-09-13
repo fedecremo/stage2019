@@ -1,0 +1,49 @@
+formato email: Report Lunedì 10/09
+
+lunedi 10 settembre 2018
+- studio di che cos'è Google Chart
+- realizzazione di alcuni Charts di prova
+- realizzazione di una pagina con Gantt Chart per la supervisione dei task
+	questo Chart contiene alcuni task inventati da me per testare il funzionamento
+- realizzazione di una tabella sottostante il Chart che mostra le informazioni dettagliate del task cliccato
+- lieve miglioramento dell'estetica della pagina
+
+martedi 11 settembre 2018
+- Andrea mi ha mostrato come fare l'upload di file su GitHub
+- creazione di un menu in html come quello in esempio
+- modifica della pagina con titolo, chart e tabella esteticamente più belle
+- upload dei file su GitHub
+- profilo GitHub: https://github.com/fedecremo/stage2019
+
+mercoledi 12 settembre 2018
+- miglioramento dell'estetica della pagina
+- creazione di un menu verticale a scomparsa
+- creazione di un <div> che fa da "titolo" della pagina
+	il <div> contiene nome del progetto, proprietario e data di fine
+- unione del menu a scomparsa con il grafico e la tabella
+
+giovedi 13 settembre 2018
+- aggiunta di una immagine di background
+- studio di SLDS ed Express.js
+- installazione di Ubuntu sul PC 
+	mi trovo meglio ad eseguire programmi in node su Ubuntu più che su Windows
+- creazione di una pagina con le caratteristiche CSS di SLDS
+	la pagina è come quella nella consegna, vanno solo corrette un paio di cose
+
+venerdi 14 settembre 2018
+
+
+lunedi 17 settembre 2018
+
+
+martedi 18 settembre 2018
+
+
+mercoledi 19 settembre 2018
+
+
+giovedi 20 settembre 2018
+
+
+venerdi 21 settembre 2018
+
