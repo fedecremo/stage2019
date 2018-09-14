@@ -35,7 +35,7 @@
 
         var options = {
 			'height':450,
-			'width':1350,
+			'width':1340,
 			gantt: {
 				criticalPathEnabled: false,
 				innerGridHorizLine: {
@@ -82,6 +82,40 @@
 		text-align: center;
 	}
 	
+	ul#menu {
+		font-family: Verdana, sans-serif;
+		font-size: 11px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+  
+	ul#menu li {
+		background-color: #54BAE2;
+		border-bottom: 5px solid #2200ff;
+		display: block;
+		width: 144px;
+		height: 30px;
+		margin: 2px;
+		float: left; /* elementi affiancati sulla sinistra */
+	}
+  
+	ul#menu li a {
+		color: #fff;
+		display: block;
+		font-weight: bold;
+		line-height: 30px;
+		text-decoration: none;
+		width: 150px;
+		height: 30px;
+		text-align: center;
+	}
+  
+	ul#menu li.active, ul#menu li:hover {
+		background-color: #2200ff;
+		border-bottom: 5px solid black;
+	}
+	
 	#title {
 		text-align: center;
 		font-size: 45;
@@ -89,8 +123,23 @@
 		
 	}
 	
-	#chart_div {
-		align: center;
+	#menu_div {
+		float: left;
+	}
+	
+	#menu_div, #chart_div {
+		float: left;
+	}
+	
+	#normie {
+		color: #fff;
+		display: block;
+		font-weight: bold;
+		line-height: 30px;
+		text-decoration: none;
+		width: 150px;
+		height: 30px;
+		text-align: center;
 	}
 	
   </style>
@@ -100,29 +149,45 @@
 	<div id="title_div">
 		<p id="title">Gestione Task</p>
 	</div>
-	
-	<div id="chart_div"></div>
-	<table border=1>
-		<tr>
-			<td>Task ID</td>
-			<td>Task Name</td>
-			<td>Resource</td>
-			<td>Start Date</td>
-			<td>End Date</td>
-			<td>Duration</td>
-			<td>Percent Complete</td>
-			<td>Dependencies</td>
-		</tr>
-		<tr>
-			<td id="task_id"></td>
-			<td id="task_name"></td>
-			<td id="resource"></td>
-			<td id="start_date"></td>
-			<td id="end_date"></td>
-			<td id="duration"></td>
-			<td id="percent_complete"></td>
-			<td id="dependencies"></td>
-		</tr>
-  </table>
+	<!------------------------------------------------------------>
+	<div id="menu_div">
+		<ul id="menu">
+			<li id="normie">REPORTS</li>
+			<li><a href="#">Created by Me</a></li>
+			<li><a href="#">Private Reports</a></li>
+			<li><a href="#">Public Reports</a></li>
+			<li><a href="#">All Reports</a></li>
+			<li id="normie">FOLDERS</li>
+			<li><a href="#">Created by Me</a></li>
+			<li><a href="#">Shared with Me</a></li>
+			<li><a href="#">All Folders</a></li>
+		</ul>
+	</div>
+	<div id="chart_div">
+	</div>
+	<div id="table_div">
+		<table border=1>
+			<tr>
+				<td>Task ID</td>
+				<td>Task Name</td>
+				<td>Resource</td>
+				<td>Start Date</td>
+				<td>End Date</td>
+				<td>Duration</td>
+				<td>Percent Complete</td>
+				<td>Dependencies</td>
+			</tr>
+			<tr>
+				<td id="task_id"></td>
+				<td id="task_name"></td>
+				<td id="resource"></td>
+				<td id="start_date"></td>
+				<td id="end_date"></td>
+				<td id="duration"></td>
+				<td id="percent_complete"></td>
+				<td id="dependencies"></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
