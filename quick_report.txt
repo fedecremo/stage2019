@@ -1,7 +1,8 @@
-formato email: Report LunedÃ¬ 10/09
+formato email: Report Lunedì 10/09
+URL: https://github.com/fedecremo/stage2019
 
 lunedi 10 settembre 2018
-- studio di che cos'Ã¨ Google Chart
+- studio di che cos'è Google Chart
 - realizzazione di alcuni Charts di prova
 - realizzazione di una pagina con Gantt Chart per la supervisione dei task
 	questo Chart contiene alcuni task inventati da me per testare il funzionamento
@@ -11,7 +12,7 @@ lunedi 10 settembre 2018
 martedi 11 settembre 2018
 - Andrea mi ha mostrato come fare l'upload di file su GitHub
 - creazione di un menu in html come quello in esempio
-- modifica della pagina con titolo, chart e tabella esteticamente piÃ¹ belle
+- modifica della pagina con titolo, chart e tabella esteticamente più belle
 - upload dei file su GitHub
 - profilo GitHub: https://github.com/fedecremo/stage2019
 
@@ -26,12 +27,22 @@ giovedi 13 settembre 2018
 - aggiunta di una immagine di background
 - studio di SLDS ed Express.js
 - installazione di Ubuntu sul PC 
-	mi trovo meglio ad eseguire programmi in node su Ubuntu piÃ¹ che su Windows
+	mi trovo meglio ad eseguire programmi in node su Ubuntu più che su Windows
 - creazione di una pagina con le caratteristiche CSS di SLDS
-	la pagina Ã¨ come quella nella consegna, vanno solo corrette un paio di cose
+	la pagina è come quella nella consegna, vanno solo corrette un paio di cose
 
 venerdi 14 settembre 2018
-
+- la visualizzazione della pagina in stile SLDS avviene con node (per prova, presso localhost:8080)
+- update del mio GitHub
+	ora la mia repository è più ordinata e comprensibile per persone al di fuori di me
+	le diverse versioni dei file contengono una spiegazione delle "novità" di ogni nuova versione
+- update del README.md su GitHub
+	il file ora contiene una spiegazione dettagliata di tutto il progetto e di tutti i file caricati
+- miglioramento dell'estetica della pagina
+	inizialmente, il grafico risultava spostato in una brutta posizione
+	il layout della pagina è ispirato alla impaginazione presente sul pdf di progetto che mi hai mandato
+- collegamento del grafico e della tabella in basso
+	cliccando su una (e una soltanto) barra del grafico, le relative informazioni verranno mostrate nella tabella
 
 lunedi 17 settembre 2018
 
