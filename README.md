@@ -4,7 +4,7 @@ I'm a stagist at a Company in Modena (MO) - Italy for a 2-week time. During this
 This README.md provides an accurate description of the content of this repository. 
 
 ### Project.pdf
-First off, the project.
+First off, the project.\n
 In this file you will find the details of the project I have to complete.
 In a few words, the page consists of a Gantt Chart that shows the User's tasks. In addition, Tables and Menus help the User know more information about the task they are interested in. 
 
