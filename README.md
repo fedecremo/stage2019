@@ -41,11 +41,11 @@ It consists of:
 - the actual HTML file;
 - some Images.
 
-### SLDS_Page.html
-Once I created an esthetically nice and coherent webpage I felt ready to face SLDS.                                                     
+### index.html
+Once I had created an esthetically nice and coherent webpage I felt ready to face SLDS.                                                 
 SLDS stands for Salesforce Lightning Design System and it is a service that provides a number of CSS and JS files that users can employ to create webpages with Salesforce-like style.                                                                                          
-This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created. It's not identical yet as I need to fix some options.                                                                                                                                                                                                       
-NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. Save the following code in the file server.js:
+This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created.                                                                                                                                                                                                      
+NB: This file will not work properly if normally opened in your browser. It is necessary to write a code in Node.js that makes use of Express.js. Let's say I write my code in the file server.js. This is it:
 ```javascript
 var express = require('express');
 var app = express();
@@ -56,7 +56,7 @@ app.use(express.static(__dirname + '/public'));
 console.log('Served: http://localhost:' + port);
 app.listen(port);
 ```
-The folder /public is the one that contains the file SLDS_Page.html. To run the code and correctly view the webpage, type:
+The folder /public is the one that contains the file index.html. To run the code and correctly view the webpage, type:
 ```
 $ node server.js
 ```
