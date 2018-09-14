@@ -4,7 +4,7 @@ I'm a stagist at a Company in Modena (MO) - Italy for a 2-week time. During this
 This README.md provides an accurate description of the content of this repository. 
 
 ### Project.pdf
-First off, the project.\n
+First off, the project.
 In this file you will find the details of the project I have to complete.
 In a few words, the page consists of a Gantt Chart created with Google Charts that shows the User's tasks. In addition, Tables and Menus help the User know more information about the task they are interested in. 
 
@@ -47,7 +47,7 @@ Once I created an esthetically nice and coherent webpage I felt ready to face SL
 SLDS stands for Salesforce Lightning Design System and it is a service that provides a number of CSS and JS files that users can employ to create webpages with Salesforce-like style.
 This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created. It's not identical yet as I need to fix some options.
 
-NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. Save the following code in the file server.js to run the code:
+NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. Save the following code in the file server.js:
 ```javascript
 var express = require('express');
 var app = express();
@@ -59,7 +59,7 @@ console.log('Served: http://localhost:' + port);
 app.listen(port);
 ```
 The folder /public is the one that contains the file SLDS_Page.html. To run the code and correctly view the webpage, type:
-```bash
+```
 $ node server.js
 ```
 Directories and Files name may change depending on the procedure you followed when you installed Express.js in your working directory. Here's a quick introduction on how to install Express.js: http://expressjs.com/it/starter/installing.html
