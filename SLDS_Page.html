@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+		      <meta charset="utf-8" />
+		          <meta http-equiv="x-ua-compatible" content="ie=edge" />
+			      <meta name="viewport" content="width=device-width, initial-scale=1" />
+			          <title>Playground</title>
+				      <link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
+				        </head>
+					<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+						<script type="text/javascript">
+									google.charts.load('current', {'packages':['gantt']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function daysToMilliseconds(days) {
+						return days * 24 * 50 * 50 * 1000;
+					}
+
+		function drawChart() {
+						var data = new google.visualization.DataTable();
+						data.addColumn('string', 'Task ID');
+						data.addColumn('string', 'Task Name');
+						data.addColumn('string', 'Resource');
+						data.addColumn('date', 'Start Date');
+						data.addColumn('date', 'End Date');
+						data.addColumn('number', 'Duration');
+						data.addColumn('number', 'Percent Complete');
+						data.addColumn('string', 'Dependencies');
+
+						data.addRows([
+											['0', 'Find sources', 'blue',
+																new Date(2018, 5, 7), new Date(2018, 8, 24), null,  33,  null],
+											['1', 'Create Bibliography', 'red',
+																new Date(2018, 7, 7), new Date(2018, 8, 24), null, 25, null],
+											['2', 'Outline paper', 'red',
+																new Date(2018, 6, 7), new Date(2018, 7, 24), null, 0, null],
+											['4', 'Write paper', 'red',
+																new Date(2018, 5, 7), new Date(2018, 8, 24), null, 100, null],
+											['5', 'Hand in paper', 'yellow',
+																new Date(2018, 5, 7), new Date(2018, 8, 17), null, 50, null]
+										]);
+
+						var options = {
+											height: 250,
+											gantt: {
+																	criticalPathEnabled: false,
+																	innerGridHorizLine: {
+																								stroke: '#a0a0a0',		//stroke = contorno
+																								strokeWidth: 1
+																							},
+																	innerGridTrack: {
+																								fill: '#fff'		//colore delle righe dispari
+																							},		
+																	innerGridDarkTrack: {
+																								fill: '#e5e5e5'		//colore delle righe pari
+																							}
+																}
+										};
+
+						var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+						chart.draw(data, options);
+					}
+	</script>
+						<style>
+			.vertical-menu {
+								width: 350px;
+													border: 1px solid black;
+																	}
+
+						.vertical-menu a {
+											background-color: white;
+																color: black;
+																					display: block;
+																										padding: 12px;
+																															text-decoration: none;
+																																				font-family: Tahoma;
+																																									font-size: 14;
+																																														font-weight: bold;
+																																																			line-height: 1.5;
+																																																							}
+
+									.vertical-menu a:hover {
+														background-color: #d2eaf6;
+																			border-left: 4px solid #209AD6;
+																							}
+												
+												a.active {
+																	background-color: #8fccea;
+																						border-left: 4px solid #197bab;
+																										}
+															
+															#head {
+																				color: grey;
+																									line-height: 3;
+																													}
+																		table {
+																						font-family: arial, sans-serif;
+																										border-collapse: collapse;
+																														width: 100%;
+																																	}
+
+																				#table_head {
+																								font-weight: bold;
+																												color: #909090;
+																															}
+																						
+																						td {
+																										border-bottom: 1px solid #dddddd;
+																														border-top: 1px solid #dddddd;
+																																		text-align: left;
+																																						padding: 15px;
+																																									}
+																									
+						</style>
+					  <body>
+
+						      <div class="slds-grid slds-wrap">
+							            <nav class="slds-col slds-size_1-of-1">
+									    <div class="slds-page-header">
+										    <div class="slds-page-header__row">
+											    <div class="slds-page-header__col-title">
+												    <div class="slds-media">
+													    <div class="slds-media__figure">
+														    <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+															    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+																    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+															    </svg>
+															    <span class="slds-assistive-text">opportunity</span>
+														    </span>
+													    </div>
+													    <div class="slds-media__body">
+														    <div class="slds-page-header__name">
+															    <div class="slds-page-header__name-title">
+																    <h1>
+																	    <span class="slds-page-header__title slds-truncate" title="Rohde Corp - 80,000 Widgets">Rohde Corp - 80,000 Widgets</span>
+																    </h1>
+															    </div>
+														    </div>
+														    <p class="slds-page-header__name-meta">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
+													    </div>
+												    </div>
+											    </div>
+										    </div>
+									    </div>
+										          </nav>
+											        <main class="slds-col slds-size_1-of-2">
+												<div class="vertical-menu">
+																<a href="#" id="head">REPORTS</a>
+																			<a href="#">Created by Me</a>
+																						<a href="#" class="active">Private Reports</a>
+																									<a href="#">Public Reports</a>
+																												<a href="#">All Reports</a>
+																															<a href="#" id="head">FOLDERS</a>
+																																		<a href="#">Created by Me</a>
+																																					<a href="#">Shared with Me</a>
+																																								<a href="#">All Folders</a>
+																																										</div>
+													      </main>
+													            <aside class="slds-col slds-size_1-of-2">
+															    <div id="chart_div"></div>
+																          </aside>
+																	        <nav class="slds-col slds-size_1-of-1">
+																			<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+																				<thead>
+																					<tr class="slds-line-height_reset">
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+																						</th>
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Account Name">Account Name</div>
+																						</th>
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Close Date">Close Date</div>
+																						</th>
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Stage">Stage</div>
+																						</th>
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Confidence">Confidence</div>
+																						</th>
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Amount">Amount</div>
+																						</th>
+																						<th class="slds-text-title_caps" scope="col">
+																							<div class="slds-truncate" title="Contact">Contact</div>
+																						</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr class="slds-hint-parent">
+																						<th data-label="Opportunity Name" scope="row">
+																							<div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);" tabindex="-1">Cloudhub</a></div>
+																						</th>
+																						<td data-label="Account Name">
+																							<div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+																						</td>
+																						<td data-label="Close Date">
+																							<div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+																						</td>
+																						<td data-label="Prospecting">
+																							<div class="slds-truncate" title="Prospecting">Prospecting</div>
+																						</td>
+																						<td data-label="Confidence">
+																							<div class="slds-truncate" title="20%">20%</div>
+																						</td>
+																						<td data-label="Amount">
+																							<div class="slds-truncate" title="$25k">$25k</div>
+																						</td>
+																						<td data-label="Contact">
+																							<div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a></div>
+																						</td>
+																					</tr>
+																					<tr class="slds-hint-parent">
+																						<th data-label="Opportunity Name" scope="row">
+																							<div class="slds-truncate" title="Cloudhub + Anypoint Connectors"><a href="javascript:void(0);" tabindex="-1">Cloudhub + Anypoint Connectors</a></div>
+																						</th>
+																						<td data-label="Account Name">
+																							<div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+																						</td>
+																						<td data-label="Close Date">
+																							<div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+																						</td>
+																						<td data-label="Prospecting">
+																							<div class="slds-truncate" title="Prospecting">Prospecting</div>
+																						</td>
+																						<td data-label="Confidence">
+																							<div class="slds-truncate" title="20%">20%</div>
+																						</td>
+																						<td data-label="Amount">
+																							<div class="slds-truncate" title="$25k">$25k</div>
+																						</td>
+																						<td data-label="Contact">
+																							<div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a></div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																				      </nav>
+																				          </div>
+
+																					    </body>
+</html>
