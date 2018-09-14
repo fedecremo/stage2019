@@ -23,20 +23,20 @@
 			data.addColumn('string', 'Resource');
 			data.addColumn('date', 'Start Date');
 			data.addColumn('date', 'End Date');
-			data.addColumn('number', 'Duration');
+			data.addColumn('number', "Duration");
 			data.addColumn('number', 'Percent Complete');
 			data.addColumn('string', 'Dependencies');
 
 			data.addRows([
-				['0', 'Find sources', 'blue', new Date(2018, 5, 7), new Date(2018, 8, 24), null,  33,  null],
+				['0', 'Find sources', 'blue', new Date(2018, 5, 7), new Date(2018, 8, 24), null, 33, null],
 				['1', 'Create Bibliography', 'red', new Date(2018, 7, 7), new Date(2018, 8, 24), null, 25, null],
 				['2', 'Outline paper', 'red', new Date(2018, 6, 7), new Date(2018, 7, 24), null, 0, null],
-				['4', 'Write paper', 'red', new Date(2018, 5, 7), new Date(2018, 8, 24), null, 100, null],
-				['5', 'Hand in paper', 'yellow', new Date(2018, 5, 7), new Date(2018, 8, 17), null, 50, null]
+				['3', 'Write paper', 'red', new Date(2018, 5, 7), new Date(2018, 8, 24), null, 100, null],
+				['4', 'Hand in paper', 'yellow', new Date(2018, 5, 7), new Date(2018, 8, 17), null, 50, null]
 			]);
 			
 			var options = {
-				height: 250,
+				height: 400,
 				gantt: {
 					criticalPathEnabled: false,
 					innerGridHorizLine: {
@@ -46,18 +46,51 @@
 					innerGridTrack: {
 						fill: '#fff'		//colore delle righe dispari
 					},
+					barHeight: 40,
 					innerGridDarkTrack: {
 						fill: '#e5e5e5'		//colore delle righe pari
 					}
 				}
 			};
 			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
-			chart.draw(data, options);
-		}
+			
+			var IDs = ["task_id", "task_name", "resource", "start_date", "end_date", "percent_complete"];
+					
+			function selectHandler() {
+				var selectedItem = chart.getSelection()[0];
+				if (selectedItem) {
+	 				for(i=0; i<6; i++) {
+	 					var value = data.getValue(selectedItem.row, i);
+	 					if(IDs[i] == "task_id") {
+	 						document.getElementById(IDs[i]).innerHTML = value;
+	 					}
+	 					if(IDs[i] == "task_name") {
+	 						document.getElementById(IDs[i]).innerHTML = value;
+	 					}
+	 					if(IDs[i] == "resource") {
+	 						document.getElementById(IDs[i]).innerHTML = value;
+	 					}
+	 					if(IDs[i] == "start_date") {
+	 						var start = String(value).slice(0, 15);
+	 						document.getElementById(IDs[i]).innerHTML = start;
+	 					}
+	 					if(IDs[i] == "end_date") {
+	 						var end = String(value).slice(0, 15);
+	 						document.getElementById(IDs[i]).innerHTML = end;
+	 					}
+	 					if(IDs[i] == "percent_complete") {
+	 						document.getElementById(IDs[i]).innerHTML = value;
+	 					}
+	 				}
+	 			}
+	 		}
+	 		google.visualization.events.addListener(chart, 'select', selectHandler);
+	 		chart.draw(data, options);
+	 	}
 	</script>
 	<style>
 		.vertical-menu {
-			width: 350px;
+			width: 270px;
 			border: 1px solid black;
 		}
 		
@@ -87,7 +120,7 @@
 			color: grey;
 			line-height: 3;
 		}
-
+<!-- 
 		table {
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
@@ -105,7 +138,7 @@
 			text-align: left;
 			padding: 15px;
 		}
-
+-->
 	</style>
 	<body>
 		<div class="slds-grid slds-wrap">
@@ -130,14 +163,14 @@
 											</h1>
 										</div>
 									</div>
-									<p class="slds-page-header__name-meta">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
+									<p class="slds-page-header__name-meta">Mark Jaeckal â€¢ Unlimited Customer â€¢ 11/13/15</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</nav>
-			<main class="slds-col slds-size_1-of-2">
+			<main class="slds-col slds-size_1-of-5">
 			<div class="vertical-menu">
 				<a href="#" id="head">REPORTS</a>
 				<a href="#">Created by Me</a>
@@ -150,7 +183,7 @@
 				<a href="#">All Folders</a>
 			</div>
 			</main>
-			<aside class="slds-col slds-size_1-of-2">
+			<aside class="slds-col slds-size_4-of-5">
 				<div id="chart_div"></div>
 			</aside>
 			<nav class="slds-col slds-size_1-of-1">
@@ -158,73 +191,44 @@
 					<thead>
 						<tr class="slds-line-height_reset">
 							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+								<div class="slds-truncate" title="Task Name">Task Name</div>
 							</th>
 							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Account Name">Account Name</div>
+								<div class="slds-truncate" title="Task ID">Task ID</div>
 							</th>
 							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Close Date">Close Date</div>
+								<div class="slds-truncate" title="Task Resource">Task Resource</div>
 							</th>
 							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Stage">Stage</div>
+								<div class="slds-truncate" title="Start Date">Start Date</div>
 							</th>
 							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Confidence">Confidence</div>
+								<div class="slds-truncate" title="End Date">End Date</div>
 							</th>
 							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Amount">Amount</div>
-							</th>
-							<th class="slds-text-title_caps" scope="col">
-								<div class="slds-truncate" title="Contact">Contact</div>
+								<div class="slds-truncate" title="Percent Complete">Percent Complete</div>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr class="slds-hint-parent">
-							<th data-label="Opportunity Name" scope="row">
-								<div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);" tabindex="-1">Cloudhub</a></div>
+							<th data-label="Task Name" scope="row">
+								<div id="task_name" class="slds-truncate" title="Find Sources"><a href="javascript:void(0);" tabindex="-1"></a></div>
 							</th>
-							<td data-label="Account Name">
-								<div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+							<td data-label="Task ID">
+								<div id="task_id" class="slds-truncate" title="0"></div>
 							</td>
-							<td data-label="Close Date">
-								<div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+							<td data-label="Task Resource">
+								<div id="resource" class="slds-truncate" title="Blue"></div>
 							</td>
-							<td data-label="Prospecting">
-								<div class="slds-truncate" title="Prospecting">Prospecting</div>
+							<td data-label="Start Date">
+								<div id="start_date" class="slds-truncate" title="Start Date"></div>
 							</td>
-							<td data-label="Confidence">
-								<div class="slds-truncate" title="20%">20%</div>
+							<td data-label="End Date">
+								<div id="end_date" class="slds-truncate" title="End Date"></div>
 							</td>
-							<td data-label="Amount">
-								<div class="slds-truncate" title="$25k">$25k</div>
-							</td>
-							<td data-label="Contact">
-								<div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a></div>
-							</td>
-						</tr>
-						<tr class="slds-hint-parent">
-							<th data-label="Opportunity Name" scope="row">
-								<div class="slds-truncate" title="Cloudhub + Anypoint Connectors"><a href="javascript:void(0);" tabindex="-1">Cloudhub + Anypoint Connectors</a></div>
-							</th>
-							<td data-label="Account Name">
-								<div class="slds-truncate" title="Cloudhub">Cloudhub</div>
-							</td>
-							<td data-label="Close Date">
-								<div class="slds-truncate" title="4/14/2015">4/14/2015</div>
-							</td>
-							<td data-label="Prospecting">
-								<div class="slds-truncate" title="Prospecting">Prospecting</div>
-							</td>
-							<td data-label="Confidence">
-								<div class="slds-truncate" title="20%">20%</div>
-							</td>
-							<td data-label="Amount">
-								<div class="slds-truncate" title="$25k">$25k</div>
-							</td>
-							<td data-label="Contact">
-								<div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);" tabindex="-1">jrogers@cloudhub.com</a></div>
+							<td data-label="Percent Complete">
+								<div id="percent_complete" class="slds-truncate" title="Percent Complete"></div>
 							</td>
 						</tr>
 					</tbody>
