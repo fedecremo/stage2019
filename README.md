@@ -58,8 +58,7 @@ app.use(express.static(__dirname + '/public'));
 console.log('Served: http://localhost:' + port);
 app.listen(port);
 ```
-The folder /public is the one that contains the file SLDS_Page.html so that it can be executed.
-To run the code and correctly view the web page, type:
+The folder /public is the one that contains the file SLDS_Page.html. To run the code and correctly view the webpage, type:
 ```
 $ node ./public/SLDS_Page.html
 ```
