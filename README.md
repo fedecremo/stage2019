@@ -1,6 +1,6 @@
 # Task Management Project with Google Charts and Salesforce Lightning Design System (SLDS) 
 My name's Federico, I'm 18 and I'm an IT and Telecommunications student.
-I'm a stagist at a Company in Modena (MO) - Italy for a 2-week time. During this stage, I will create a webpage which helps the User managing his tasks and commitments. This webpage makes use of the Salesforce Lightning Design System (SLDS).
+I'm a stagist at a Company in Modena (MO) - Italy for 2 weeks. During this stage, I will create a webpage which helps the User manage his tasks and commitments. This webpage makes use of the Salesforce Lightning Design System (SLDS).
 This README.md provides an accurate description of the content of this repository. 
 
 ### Project.pdf
