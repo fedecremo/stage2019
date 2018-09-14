@@ -48,7 +48,7 @@ It is a service that provides a number of CSS and JS files that users can employ
 This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created. It's not identical yet as I need to fix some options.
 
 NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. This is the code:
-```
+```javascript
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
