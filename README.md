@@ -6,10 +6,10 @@ This README.md provides an accurate description of the content of this repositor
 ### Project.pdf
 First off, the project.\n
 In this file you will find the details of the project I have to complete.
-In a few words, the page consists of a Gantt Chart that shows the User's tasks. In addition, Tables and Menus help the User know more information about the task they are interested in. 
+In a few words, the page consists of a Gantt Chart created with Google Charts that shows the User's tasks. In addition, Tables and Menus help the User know more information about the task they are interested in. 
 
 ### Gantt_Chart.html
-This file contains the evolutions of the Gantt Chart I created.
+This file contains the evolutions of the Gantt Chart I created with Google Charts.
 Firstly, I created a Chart with random information just to test whether it worked or not.
 Then, I sequetially added some parts and features to the page:
 - an Interactive Table which shows itemized details about the task the User clicks on the Chart;
@@ -17,7 +17,7 @@ Then, I sequetially added some parts and features to the page:
 - an Off-Canvas Menu similar to the one in the instructions given to me.
 
 In Version 2.0 I added a Horizontal Menu which I eventually deleted because I didn't like it. 
-The Horizontal Menu was thus replaced the Off-Canvas Vertical Menu.
+The Horizontal Menu was thus replaced by the Off-Canvas Vertical Menu.
 
 ### Vertical_Menu.html
 This file contains a Vertical Menu designed with HTML tags and CSS styles.
@@ -29,6 +29,7 @@ It consists of:
 - Style CSS files;
 - JS and JQuery files;
 - the actual HTML file.
+
 This Menu has nothing to do with the project purpose; it just consists of the code that makes up a general menu. By changing some options and specifics it will be possible to adapt the Menu to the project requirements. 
 
 Credits: https://www.yourinspirationweb.com/2014/10/15/come-realizzare-un-menu-a-comparsa-laterale-con-un-clic/
