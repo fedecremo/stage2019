@@ -1,2 +1,58 @@
 # stage2019
-provo a modificare il README
+My name's Federico, I'm 18 and I'm an IT and Telecommunications student.
+I'm a stagist at a Company in Modena (MO) - Italy for a 2-week time. During this stage, I will create a webpage which helps the User managing his tasks and commitments. This webpage makes use of the Salesforce Lightning Design System (SLDS).
+This README.md provides an accurate description of the content of this repository. 
+
+# Project.pdf           Portable Document Format file
+First off, the project.
+In this file you will find the details of the project I have to complete.
+In a few words, the page consists of a Gantt Chart that shows the User's tasks. In addition, Tables and Menus help the User know more information about the task they are interested in. 
+
+# Gantt_Chart.html      HyperText Markup Language file
+This file contains the evolutions of the Gantt Chart I created.
+Firstly, I created a Chart with random information just to test whether it worked or not.
+Then, I sequetially added some parts and features to the page:
+- an Interactive Table which shows itemized details about the task the User clicks on the Chart;
+- a Title area consisting of Logo, Company Name, User Name and End Date;
+- an Off-Canvas Menu similar to the one in the instructions given to me.
+
+In Version 2.0 I added a Horizontal Menu which I eventually deleted because I didn't like it. 
+The Horizontal Menu was thus replaced the Off-Canvas Vertical Menu.
+
+# Vertical_Menu.html    HyperText Markup Language file
+This file contains a Vertical Menu designed with HTML tags and CSS styles.
+It is similar to the one in the project PDF.
+
+# Off-Canvas_Menu       directory
+This directory contains everything that is required to create the Off-Canvas Menu.
+It consists of Style CSS files, JS and JQuery files and the actual HTML file.
+This Menu has nothing to do with the project purpose; it just consists of the code that makes up a general menu. By changing some options and specifics it will be possible to adapt the Menu to the project requirements. 
+
+Credits: https://www.yourinspirationweb.com/2014/10/15/come-realizzare-un-menu-a-comparsa-laterale-con-un-clic/
+
+# All_Together          directory
+This directory contains the webpage with all my works together. 
+It consists of Style CSS files, JS and JQuery files, the actual HTML file and some Images.
+
+# SLDS_Page             HyperText Markup Language file
+Once I created an esthetically nice and coherent webpage I felt ready to face SLDS.
+SLDS stands for Salesforce Lightning Design System.
+It is a service that provides a number of CSS and JS files that users can employ to create webpages with Salesforce-like style.
+This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created. It's not identical yet as I need to fix some options.
+
+# quick_report.txt      Text file
+Last but not least... the report!
+As this is a stage project, which means I'm a stagist in a company for a short period of time, I have to complete a project the Company gives me within the given time. In my case, I've been given 2 weeks to complete this project. For this reason, it is very important to keep a trace of my work so that my tutor knows what I'm doing and, most importantly, HOW I'm doing it.
+
+This Report is in Italian.
+
+
+
+
+
+
+
+
+
+
+
