@@ -54,12 +54,12 @@
 			};
 			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
 			
-			var IDs = ["task_id", "task_name", "resource", "start_date", "end_date", "percent_complete"];
+			var IDs = ["task_id", "task_name", "resource", "start_date", "end_date", "duration", "percent_complete"];
 					
 			function selectHandler() {
 				var selectedItem = chart.getSelection()[0];
 				if (selectedItem) {
-	 				for(i=0; i<6; i++) {
+	 				for(i=0; i<7; i++) {
 	 					var value = data.getValue(selectedItem.row, i);
 	 					if(IDs[i] == "task_id") {
 	 						document.getElementById(IDs[i]).innerHTML = value;
@@ -79,7 +79,7 @@
 	 						document.getElementById(IDs[i]).innerHTML = end;
 	 					}
 	 					if(IDs[i] == "percent_complete") {
-	 						document.getElementById(IDs[i]).innerHTML = value;
+	 						document.getElementById(IDs[i]).innerHTML = value+"%";
 	 					}
 	 				}
 	 			}
@@ -120,25 +120,7 @@
 			color: grey;
 			line-height: 3;
 		}
-<!-- 
-		table {
-			font-family: arial, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-		}
 
-		#table_head {
-			font-weight: bold;
-			color: #909090;
-		}
-
-		td {
-			border-bottom: 1px solid #dddddd;
-			border-top: 1px solid #dddddd;
-			text-align: left;
-			padding: 15px;
-		}
--->
 	</style>
 	<body>
 		<div class="slds-grid slds-wrap">
