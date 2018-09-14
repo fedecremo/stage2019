@@ -44,11 +44,10 @@ It consists of:
 
 ### SLDS_Page.html
 Once I created an esthetically nice and coherent webpage I felt ready to face SLDS.
-SLDS stands for Salesforce Lightning Design System.
-It is a service that provides a number of CSS and JS files that users can employ to create webpages with Salesforce-like style.
+SLDS stands for Salesforce Lightning Design System and it is a service that provides a number of CSS and JS files that users can employ to create webpages with Salesforce-like style.
 This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created. It's not identical yet as I need to fix some options.
 
-NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. Save the wollowing code in the file server.js to correctly run the code:
+NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. Save the following code in the file server.js to run the code:
 ```javascript
 var express = require('express');
 var app = express();
