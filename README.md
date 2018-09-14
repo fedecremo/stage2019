@@ -48,7 +48,7 @@ SLDS stands for Salesforce Lightning Design System.
 It is a service that provides a number of CSS and JS files that users can employ to create webpages with Salesforce-like style.
 This file contains the exact same elements of the sample page in the instructions, including the Gantt Chart and the Vertical Menu I personally created. It's not identical yet as I need to fix some options.
 
-NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. This is the code:
+NB: This file will not work properly if normally opened in your browser. It is necessary to write a piece of code in Node.js that makes use of Express.js. Save the wollowing code in the file server.js to correctly run the code:
 ```javascript
 var express = require('express');
 var app = express();
@@ -60,8 +60,8 @@ console.log('Served: http://localhost:' + port);
 app.listen(port);
 ```
 The folder /public is the one that contains the file SLDS_Page.html. To run the code and correctly view the webpage, type:
-```
-$ node ./public/SLDS_Page.html
+```bash
+$ node server.js
 ```
 Directories and Files name may change depending on the procedure you followed when you installed Express.js in your working directory. Here's a quick introduction on how to install Express.js: http://expressjs.com/it/starter/installing.html
 
