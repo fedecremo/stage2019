@@ -63,6 +63,9 @@ $ node server.js
 Now you will be able to view the page at http://localhost:8080/                                                                         
 Directories and Files name may change depending on the procedure you followed when you installed Express.js in your working directory. Here's a quick introduction on how to install Express.js: http://expressjs.com/it/starter/installing.html
 
+### Passport
+This directory contains the files I used to create the authentication software for my website.
+
 ### quick_report.txt
 Last but not least... the report!                                                                                                       
 As this is a stage project, which means I'm a stagist in a company for a short period of time, I have to complete a project the Company gives me within the given time. In my case, I've been given 2 weeks to complete this project. For this reason, it is very important to keep a trace of my work so that my tutor knows what I'm doing and, most importantly, HOW I'm doing it.                                   
