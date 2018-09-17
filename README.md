@@ -60,6 +60,7 @@ The folder /public is the one that contains the file index.html. To run the code
 ```
 $ node server.js
 ```
+Now you will be able to view the page at http://localhost:8080/                                                                         
 Directories and Files name may change depending on the procedure you followed when you installed Express.js in your working directory. Here's a quick introduction on how to install Express.js: http://expressjs.com/it/starter/installing.html
 
 ### quick_report.txt
