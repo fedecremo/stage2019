@@ -45,7 +45,11 @@ venerdi 14 settembre 2018
 	cliccando su una (e una soltanto) barra del grafico, le relative informazioni verranno mostrate nella tabella
 
 lunedi 17 settembre 2018
-
+- studio di passport.js
+- creazione di semplice form di autenticazione
+- creazione di semplice software e middleware di autenticazione
+- consultazione di diversi siti con tutorial su come realizzare un'autenticazione con passport.js
+- creazione di una directory "Passport" con dentro ciò che sono riuscito a fare
 
 martedi 18 settembre 2018
 
