@@ -8,6 +8,9 @@ First off, the project.
 In this file you will find the details of the project I have to complete.                                                               
 In a few words, the page consists of a Gantt Chart created with Google Charts that shows the User's tasks. In addition, Tables and Menus help the User know more information about the task they are interested in.                                                               
 
+### youtube
+This folder contains all the files that are required to perform Google Authentication in you website
+
 ### Gantt_Chart.html
 This file contains the evolutions of the Gantt Chart I created with Google Charts.                                                      
 Firstly, I created a Chart with random information just to test whether it worked or not.                                               
