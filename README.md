@@ -14,6 +14,9 @@ This folder contains all the files that are required to perform Google Authentic
 ### demo_heroku
 This folder contains the website with all the files that are required to let it work properly, including some of the ones in this repo.
 
+### Passport
+This folder contains what I could do regarding authentication forms and software
+
 ### Gantt_Chart.html
 This file contains the evolutions of the Gantt Chart I created with Google Charts.                                                      
 Firstly, I created a Chart with random information just to test whether it worked or not.                                               
